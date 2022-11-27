@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CatalogController;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,7 @@ use App\Http\Controllers\CatalogController;
 |
 */
 
-Route::get('/', function () {
-    return \Illuminate\Support\Facades\Redirect::route('catalog.index');
-});
-
+Route::get('/', IndexController::class)->name('index');
 
 Route::get('/catalog/index', [CatalogController::class, 'index'])->name('catalog.index');
 Route::get('/catalog/category/{slug}', [CatalogController::class, 'category'])->name('catalog.category');
