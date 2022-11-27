@@ -15,7 +15,7 @@ use App\Http\Controllers\CatalogController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return \Illuminate\Support\Facades\Redirect::route('catalog.index');
 });
 
 
