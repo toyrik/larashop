@@ -24,3 +24,6 @@ Route::get('/catalog/brand/{slug}', [CatalogController::class, 'brand'])->name('
 Route::get('/catalog/product/{slug}', [CatalogController::class,'product'])->name('catalog.product');
 Route::get('/basket/index', [BasketController::class, 'index'])->name('basket.index');
 Route::get('/basket/checkout', [BasketController::class, 'checkout'])->name('basket.checkout');
+Route::post('/basket/add/{id}', [BasketController::class, 'add'])
+    ->where('id', '[0-9]+')
+    ->name('basket.add');
